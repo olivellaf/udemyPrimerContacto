@@ -34,7 +34,7 @@ Route::get('/contact', function () {
 ** or use ANY for the route works with all http methods
 */
 Route::any('/contact', function () {
-    return view('contact');
+    return view('contact.contact');
 });
 
 /* Send variables
@@ -51,7 +51,7 @@ Route::get('/product/{id?}/{type?}', function ( $id = '2500', $type = 'simple' )
     Another way, more polite
     */
 
-    return view('product')
+    return view('product.product')
         ->with('id', $id)
         ->with('type', $type);
 
