@@ -41,7 +41,7 @@ Route::any('/contact', function () {
 ** Use "?" if want to make the parameter NOT required
 ** Use "where" for trying to "validate" if will be required.
 */
-Route::get('/product/{id?}/{type?}', function ( $id = '2500', $type = 'simple' ) {
+Route::get('/product/{id?}/{type?}', function ( $id = '2500', $type = null ) {
     /*
     return view('product', array(
         'id' => $id,
