@@ -53,7 +53,8 @@ Route::get('/product/{id?}/{type?}', function ( $id = '2500', $type = null ) {
 
     return view('product.product')
         ->with('id', $id)
-        ->with('type', $type);
+        ->with('type', $type)
+        ->with('attributes', array('Color', 'Talla', 'Peso', 'Precio', 'Stock'));
 
 })->where([
     'id' => '[0-9]+',
