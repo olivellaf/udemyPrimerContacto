@@ -14,8 +14,16 @@
 
 <?php $num = 4; ?>
 
-<h4>Tabla del {{ $num }}</h4>
+<h4>Table of {{ $num }}</h4>
 
 @for($i=1; $i<=10; $i++)
     {{ $i . ' x ' . $num . ' = ' . ($i*$num) }}<br/>
 @endfor
+
+<h4>WHILE LOOP</h4>
+
+<?php $x=1; // better use php cuotes for variables ?>
+@while($x <= 7)
+    {{ 'Hello World ' . $x }} <br/>
+    <?php $x++; ?>
+@endwhile
