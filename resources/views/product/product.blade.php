@@ -1,3 +1,6 @@
+
+@include('product.header', array('pageTitle' => 'Products'))
+
 {{-- This is a comment --}}
 <?php // This is another comment. Blade templates allows old php writting, and new ways as "{{}}" ?>
 
