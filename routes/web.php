@@ -42,10 +42,19 @@ Route::any('/contact', function () {
 ** Use "where" for trying to "validate" if will be required.
 */
 Route::get('/product/{id?}/{type?}', function ( $id = '2500', $type = 'simple' ) {
+    /*
     return view('product', array(
         'id' => $id,
         'type' => $type,
     ));
+
+    Another way, more polite
+    */
+
+    return view('product')
+        ->with('id', $id)
+        ->with('type', $type);
+
 })->where([
     'id' => '[0-9]+',
     'type' => '[A-Za-z]+'
