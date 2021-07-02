@@ -17,12 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hola-mundo', function () {
-    return 'Hello World';
+Route::get('/hello-world', function () {
+    return view('hello-world');
 });
 
 /* TRYING POST METHOD */
-Route::post('/hola-mundo', function () {
+Route::post('/hello-world', function () {
     return 'Hello World by POST';
 });
 
