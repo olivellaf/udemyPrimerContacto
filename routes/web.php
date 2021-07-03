@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+/* Controllers */
 use App\Http\Controllers\FruitsController;
+
+/* Middlewares */
+use App\Http\Middleware\IsAdminMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,11 +69,10 @@ Route::get('/product/{id?}/{type?}', function ( $id = '2500', $type = null ) {
 
 
 /* New route for Controller, this is how its done now. */
-/*
-Route::get('/fruits', [FruitsController::class, 'index']);
-Route::get('/oranges', [FruitsController::class, 'oranges']);
-Route::get('/pears', [FruitsController::class, 'pears']);
-*/
+
+Route::get('/fruits', [FruitsController::class, 'getIndex']);
+Route::get('/oranges/{admin?}', [FruitsController::class, 'getOranges'])->middleware(IsAdminMiddleware::class);
+Route::get('/pears', [FruitsController::class, 'anyPears']);
 
 /*
 Trying to get some automatized routes, but not working since version 5.2 of Laravel.
