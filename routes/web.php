@@ -72,7 +72,9 @@ Route::get('/product/{id?}/{type?}', function ( $id = '2500', $type = null ) {
 Route::prefix('fshop')->group(function() {
 
     Route::get('/fruits', [FruitsController::class, 'getIndex']);
-    Route::get('/oranges/{admin?}', [FruitsController::class, 'getOranges'])->middleware(IsAdminMiddleware::class);
+    Route::get('/oranges/{admin?}', [FruitsController::class, 'getOranges'])
+        ->middleware(IsAdminMiddleware::class)
+        ->name('oranges2'); // give a name to the route!
     Route::get('/pears', [FruitsController::class, 'anyPears']);
 
 });
