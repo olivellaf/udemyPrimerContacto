@@ -79,6 +79,8 @@ Route::prefix('fshop')->group(function() {
 
 });
 
+Route::post('/getform', [FruitsController::class, 'getFormData']);
+
 
 /* New route for Controller, this is how its done now. */
 
