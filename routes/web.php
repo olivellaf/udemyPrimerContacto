@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\FruitsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,3 +62,7 @@ Route::get('/product/{id?}/{type?}', function ( $id = '2500', $type = null ) {
     'id' => '[0-9]+',
     'type' => '[A-Za-z]+'
 ]);
+
+
+/* New route for Controller, this is how its done now. */
+Route::get('/fruits', [FruitsController::class, 'index']);
