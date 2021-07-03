@@ -65,7 +65,13 @@ Route::get('/product/{id?}/{type?}', function ( $id = '2500', $type = null ) {
 
 
 /* New route for Controller, this is how its done now. */
+/*
 Route::get('/fruits', [FruitsController::class, 'index']);
-
 Route::get('/oranges', [FruitsController::class, 'oranges']);
 Route::get('/pears', [FruitsController::class, 'pears']);
+*/
+
+/*
+Trying to get some automatized routes, but not working since version 5.2 of Laravel.
+Route::controller('fruits', 'FruitsController');
+*/
