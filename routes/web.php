@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 /* Controllers */
 use App\Http\Controllers\FruitsController;
+use App\Http\Controllers\NotesController;
 
 /* Middlewares */
 use App\Http\Middleware\IsAdminMiddleware;
@@ -80,6 +81,8 @@ Route::prefix('fshop')->group(function() {
 });
 
 Route::post('/getform', [FruitsController::class, 'getFormData']);
+
+Route::get('/notes', [NotesController::class, 'getIndex']);
 
 
 /* New route for Controller, this is how its done now. */
