@@ -20,4 +20,19 @@ class NotesController extends Controller
         return view('notes.index', ['notes' => $notes]);
     }
 
+    public function getNoteFromID(int $id) {
+
+        // Get a specific note
+        // We use "select" for only get information from selected columns
+        $note = DB::table('notes')->select('id', 'title', 'description')->where('id', $id)->first();
+
+        if(empty($note)) {
+
+            return redirect()->action([NotesController::class, 'getIndex']);
+
+        }
+
+        return view('notes.note', ['note' => $note] );
+    }
+
 }

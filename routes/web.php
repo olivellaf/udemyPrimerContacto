@@ -83,6 +83,7 @@ Route::prefix('fshop')->group(function() {
 Route::post('/getform', [FruitsController::class, 'getFormData']);
 
 Route::get('/notes', [NotesController::class, 'getIndex']);
+Route::get('/notes/note/{id}', [NotesController::class, 'getNoteFromID']);
 
 
 /* New route for Controller, this is how its done now. */
