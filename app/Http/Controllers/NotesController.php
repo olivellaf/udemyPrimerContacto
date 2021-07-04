@@ -10,7 +10,7 @@ class NotesController extends Controller
 
     public function getIndex() {
         // Get all the notes
-        $notes = DB::table('notes')->get();
+        $notes = DB::table('notes')->orderBy('id', 'desc')->get();
 
         // This should be on the VIEW. Just trying here.
 /*         foreach($notes as $note) {
@@ -33,6 +33,19 @@ class NotesController extends Controller
         }
 
         return view('notes.note', ['note' => $note] );
+    }
+
+    public function postNote(Request $request) {
+        $note = DB::table('notes')->insert([
+            'title' => $request->input('title'),
+            'description' => $request->input('description')
+        ]);
+
+        return redirect()->action([NotesController::class, 'getIndex']);
+    }
+
+    public function saveNote() {
+        return view('notes.saveNote');
     }
 
 }
