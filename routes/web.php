@@ -87,6 +87,8 @@ Route::get('/notes/note/{id}', [NotesController::class, 'getNoteFromID']);
 
 Route::any('/notes/save-note', [NotesController::class, 'saveNote']);
 
+Route::get('/notes/delete-note/{id]', [[NotesController::class, 'getDeleteNote']]);
+
 
 /* New route for Controller, this is how its done now. */
 

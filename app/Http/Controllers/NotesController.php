@@ -20,7 +20,7 @@ class NotesController extends Controller
         return view('notes.index', ['notes' => $notes]);
     }
 
-    public function getNoteFromID(int $id) {
+    public function getNoteFromID($id) {
 
         // Get a specific note
         // We use "select" for only get information from selected columns
@@ -48,4 +48,17 @@ class NotesController extends Controller
         return view('notes.saveNote');
     }
 
+
+    public function getDeleteNote( $id ) {
+
+        // Remove specific note
+        // We use "delete" for remove the row.
+        $note = DB::table('notes')->where('id', '=', $id)->delete();
+
+
+        var_dump($note);
+
+
+        return redirect()->action([NotesController::class, 'getIndex'])->with('status', 'Note removed properly');
+    }
 }
